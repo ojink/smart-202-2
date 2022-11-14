@@ -15,6 +15,7 @@ public class CalculatorServlet extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+		try {
 		//String  -> int : Integer 
 		int num1 = Integer.parseInt( request.getParameter("num1") );
 		//Integer -> int : 자동형변환(Unboxing)
@@ -28,6 +29,14 @@ public class CalculatorServlet extends HttpServlet {
 		//응답할 화면에서 사용할 수 있도록 request에 담는다
 		request.setAttribute("calculated", result);
 		request.getSession().setAttribute("result", result);
+		}catch(Exception e) {
+//			RequestDispatcher rd
+//			= request.getRequestDispatcher("calculator_error");
+//			rd.forward(request, response);
+			request.setAttribute("error", e);
+			request.getRequestDispatcher("calculator_error")
+					.forward(request, response);
+		}
 		
 		//응답화면
 		/*
@@ -42,7 +51,7 @@ public class CalculatorServlet extends HttpServlet {
 			= request.getRequestDispatcher("calculator_forward");
 		rd.forward(request, response);
 		*/
-		response.sendRedirect("calculator_redirect");
+//		response.sendRedirect("calculator_redirect");
 		
 		/*
 		response.setContentType("text/html; charset=utf-8");

@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import employee.command.EmployeeDelete;
+import employee.command.EmployeeInsert;
 import employee.command.EmployeeSelect;
 
 @WebServlet("*.do")
@@ -38,7 +40,15 @@ public class FrontController extends HttpServlet {
 			
 		}else if( uri.equals("/insert.do") ) {
 			business = "저장 요청에 대한 비지니스 로직";
-			view = "저장요청에 대한 응답화면";
+			view = "select.do";
+			
+			//비지니스로직
+			EmployeeInsert command = new EmployeeInsert();
+			command.execute(request, response);
+			
+			//응답화면연결
+			//insert/update/delete 처리가 실행되는 요청후 화면연결은 redirect 방식
+			response.sendRedirect(view);
 			
 		}else if( uri.equals("/update.do") ) {
 			business = "수정 요청에 대한 비지니스 로직";
@@ -46,8 +56,13 @@ public class FrontController extends HttpServlet {
 			
 		}else if( uri.equals("/delete.do") ) {
 			business = "삭제 요청에 대한 비지니스 로직";
-			view = "삭제요청에 대한 응답화면";
+			view = "select.do";
 			
+			EmployeeDelete command = new EmployeeDelete();
+			command.execute(request, response);
+			
+			//프리젠테이션 로직
+			response.sendRedirect(view);
 		}
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
