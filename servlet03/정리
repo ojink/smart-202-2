@@ -1,6 +1,101 @@
-1. 스크립트릿: <% %> 
+1. 스크립트릿Scriptlet: <% %> 
    jsp 에서 service메소드 내에 들어가는 명령문 부분
    
-2. 표현식: <%= %>
+2. 표현식expression tag: <%= %>
    데이터출력: 변수값, 리턴하는 메소드의 리턴값
    service메소드 내에 들어가는 부분
+
+3. 선언declaration tag: <%! %>   
+	필드(멤버변수), 메소드 선언하는 부분
+	jsp클래스 내에 들어가는 부분
+
+4. 지시어: <%@ %>
+   - page 지시어
+   	 현재 jsp 페이지에 적용할 속성을 지정
+   	 import 속성으로 자바에서의 클래스import선언문을 지정
+   	 <%@ page language='' import=''  ...%>
+   - include 지시어
+   	 매 페이지마다 공통적인 부분을 별도 페이지로 만들고
+   	 별도 페이지를 매 페이지에 포함시킨다 - 유지보수가 용이
+   	 정적페이지로 include 지시어가 선언된 페이지만 java파일이 생성되고 컴파일된다.
+   	 <%@ include file='' %>
+   - taglib 지시어
+   	 추가적인 library를 설치해야 한다.
+   	 : JSTL(Jsp Standard Tag Library)
+   	 <%@ taglib uri='' prefix='' %>
+   	 
+5. 주석 : crtl+shift+/, crtl+shift+c
+	<!-- --> : html 태그에 대한 주석  
+	<%-- --> : jsp 태그에 대한 주석  	 	
+    /**/, // : java코드에 해당하는 스크립트릿, 선언에 있는 코드 주석
+    
+    
+
+jsp 내장객체
+jsp 파일이 서블릿으로 변환될 때 자동생성되는 객체.
+service 메소드에 선언된 변수에 해당한다. 
+스크립트릿과 표현식에서 사용된다
+주로 사용하는 내장객체: request, response, session, out    
+
+1. out : 출력과 관련된 내장객체 변수
+2. request :  
+	서블릿의 doGet, doPost, service 메소드의 파라미터와 동일한 변수
+	요청시의 정보를 담고 있다.
+3. response :
+	서블릿의 doGet, doPost, service 메소드의 파라미터와 동일한 변수
+	응답에 필요한 정보를 담고 있다.
+4. session :
+	어플리케이션에 처음 접속시 세션이 만들어지고,
+	브라우저를 모두 닫으면 세션이 끊긴다
+	여러 페이지마다 확인해야 하는 정보가 있다면 session scope 에 담는다
+	scope 에 담는 값은 attribute 로 담는다
+	: setAttribute(속성명, 값);
+	-> scope 에 저장된 데이터를 확인
+	: getAttribute(속성명);
+	  실제 저장한 값의 데이터타입으로 형변환(cast)해서 변수에 담는다
+	    
+	
+[실습]
+1. 계산기화면: calculate.jsp 를 만든다
+   두 숫자 입력, 연산자 선택 해서 
+   계산하기 버튼을 클릭시 form 태그를 submit 한다
+   : 요청은 calculate_result.jsp 
+2. 계산결과화면: calculate_result.jsp 만든다
+   두 숫자, 연산자 에 대한 계산 결과를 출력한다.
+   예) 계산결과: 10 + 20 = 30
+3. calculate_result.jsp  에서 화면을 홈으로 forward 한다.
+   홈화면(index.jsp) 에서 
+   연산 결과를 출력한다: 예) 계산결과: 10 + 20 = 30    
+
+
+
+
+
+
+
+
+
+	
+			
+	
+	
+	
+	
+	
+	
+	
+
+    
+    
+    
+    
+    
+    
+    	 	
+   
+   
+   
+   
+   
+   
+   
