@@ -35,6 +35,11 @@ String now = sdf.format(date);
 	<li>JSTL</li>
 </ul>
 
-<%@ include file='include/footer.jsp' %>
+<%-- <%@ include file='include/footer.jsp' %> --%>
+<%-- <jsp:include page='include/footer.jsp'/> --%>
+<jsp:include page='include/footer.jsp'>
+	<jsp:param name='phone' value='010.5214.8659'/>
+	<jsp:param name='email' value='test@naver.com'/>
+</jsp:include>
 </body>
 </html>
