@@ -69,6 +69,23 @@ service 메소드에 선언된 변수에 해당한다.
 
 
 
+자바빈: DTO에 해당함
+setProperty: setter 메소드와 같고
+getProperty: getter 메소드와 같다.
+Property = 필드
+useBean 액션 : 새로운 자바빈 객체를 생성하거나
+              자바빈 객체를 접근하는데 사용
+              
+
+
+<% %>
+<%! %>
+데이터출력 : 표현식 <%= %>
+-> EL(Expression Language) : ${}
+모든 속성(attribute) 을 출력하는데 사용한다 
+: page scope < request scope < session scope < application scope
+
+ 
 
 
 
