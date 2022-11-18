@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,10 +26,15 @@ if( request.getParameterValues("sports")!=null ){
 %>
 </div>
 <div>스포츠(EL):
-	${paramValues.sports[0]}
-	${paramValues.sports[1]}
-	${paramValues.sports[2]}
-	${paramValues.sports[3]}
+	<!-- 주소창에 파라미터로 넘어온 데이터가 배열인 경우 -->
+	<c:forEach items="${paramValues.sports}" var='s' varStatus='state'>
+	${state.index eq 0 ? '시작>' : ''}${s}${state.last ? '' : ',&nbsp;&nbsp;&nbsp;' }
+	</c:forEach>
+<%-- 	${paramValues.sports[0]} --%>
+<%-- 	${paramValues.sports[1]} --%>
+<%-- 	${paramValues.sports[2]} --%>
+<%-- 	${paramValues.sports[3]} --%>
+	
 <!-- 해당 값이 없으면 출력되지 않는 것일뿐 에러가 발생하지는 않는다	 -->
 </div> 
 <hr>

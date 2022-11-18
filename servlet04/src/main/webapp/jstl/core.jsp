@@ -120,7 +120,38 @@ request.setAttribute("score_map", map);
 // for(int no : list){
 // 	list.get(0)
 // }
+
+int no[] = { 10, 20, 30, 40, 50 };
+request.setAttribute("no", no);
 %>
+<hr>
+<div>jstl forEach를 사용해 no에 있는 값을 출력</div>
+<c:forEach items='${no}' var='n'>
+${n}
+</c:forEach>
+<hr>
+<div>jstl forEach를 사용해 구구단 3단 출력</div>
+<c:forEach var='dan' begin='2' end='9'>
+	<c:forEach var='by' begin='1' end='9'>
+	<div>${dan} * ${by} = ${dan*by}</div>
+	</c:forEach>
+	<hr>
+</c:forEach>
+<hr>
+
+<h4>6.토큰분리</h4>
+<%
+String data = "java,oracle?html,css/jquery";
+String[] arr = data.split(",");
+request.setAttribute("subject", data);
+%>
+<c:forTokens items="${subject}" delims="/,?" var='s'>
+<div>${s}</div>
+</c:forTokens>
+<hr>
+<h4>7.페이지이동, 링크걸기</h4>
+<div><a href='<c:url value="/param/form_result.jsp?name=심청&gender=남" />'>회원정보</a></div>
+
 
 
 
