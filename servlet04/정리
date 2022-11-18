@@ -51,6 +51,46 @@ JSTL(JSP Standard Tag Library)
 				</c:forEach>
 	
 
+4) 토큰분리
+   String alpha = "A,B,C/D";
+   String data[] = alpha.split(",");
+   StringTokenizer token = new StringTokenizer("/,");
+   while( token.hasMoreTokens() ){
+   	token.nextToken();
+   }
+   
+	<c:forTokens items='문자열' delims="/,?" var='분리된토큰을담을변수'>
+	${분리된토큰을담은변수}
+	</c:forTokens>   
+
+5) 페이지이동, 링크걸기: <c:url value='요청url'/>
+
+ 
+2. 문자열에 대한 함수 라이브러리
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
+1) 문자열의 길이: ${fn: length(데이터)}
+2) 문자열의 일부: ${fn: substring(데이터, 시작, 끝위치+1)}
+3) 문자열의 공백제거: ${fn: trim(데이터)}
+4) 특정문자열의 시작위치: ${fn: indexOf(데이터, 대상문자열)}
+5) 문자열에서 특정문자열을 다른문자열로 바꾸기: ${fn: replace(데이터, 특정문자열, 다른문자열)}
+6) 대/소문자화: ${fn: toUpperCase/toLowerCase(데이터)}
+7) 특정 문자열이 포함되어 있는지 확인: ${fn: contains(데이터, 특정문자열)}
+8) 배열변수를 하나의 문자열로 만들기: ${fn: join(데이터, 연결문자열)} 
+9) 문자분리: ${fn: split(데이터, 구분자)}
+
+
+3. 포맷 라이브러리 - 날짜, 숫자
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+날짜 포맷 기본: 2022. 11. 08
+날짜 표현 방식: dateStyle : medium(기본), full, long, short
+사용자가 지정형식: pattern="형식" yyyy MM dd 
+시각 포맷 방식: timeStyle :  medium(기본), full, long, short
+날짜/시각: type='date/time' date(기본)
+             
+     
+
+
 
 
 
