@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+매퍼태그에 대한 식별자: namespace  
+각 쿼리태그에 대한 식별자: id
+조회(select) 의 경우 resultType을 반환할 데이터의 타입으로 지정
+-->
+<mapper namespace="test">
+	<select id='select_today' resultType="java.sql.Date">
+	select sysdate from dual
+	</select>
+	
+	<select id='select_now' resultType='String'>
+	select to_char(sysdate, 'hh:mi:ss') from dual
+	</select>
+	
+
+	<select id='user_count' resultType='integer'>
+	select count(*) from tbl_java_user
+	</select>	
+</mapper>  
