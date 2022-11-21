@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div><a href='../'>홈으로</a></div>
-<div><a href='index.jsp'>JSTL</a></div>
+<div><a href='<c:url value="/"/>'>홈으로</a></div>
+<div><a href='<c:url value="/jstl/index.jsp"/>'>JSTL</a></div>
 <hr>
 <h3>코어 라이브러리 실습</h3>
 <h4>1.변수</h4>

@@ -84,11 +84,16 @@ JSTL(JSP Standard Tag Library)
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 날짜 포맷 기본: 2022. 11. 08
 날짜 표현 방식: dateStyle : medium(기본), full, long, short
-사용자가 지정형식: pattern="형식" yyyy MM dd 
+사용자가 지정형식: pattern="형식" yyyy/MM/dd a hh:mm:ss
+                              월:MM, 분:mm (Oracle- 월:mm, 분:mi)  
 시각 포맷 방식: timeStyle :  medium(기본), full, long, short
 날짜/시각: type='date/time' date(기본)
-             
-     
+
+숫자포맷: 
+groupingUsed=true 기본 - 천 단위 , 포맷
+사용자지정형식: pattern="###,###,###.##"  12345.123 -> 12,345.12
+백분율: type='percent' value='0~1'   1:100%           
+금액: 통화기호 type='currency'    value='100000'  $100,000
 
 
 
