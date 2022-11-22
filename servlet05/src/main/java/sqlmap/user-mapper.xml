@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+
+<!-- 전체 사용자정보 목록 -->
+<select id='user_list' resultType='dto.UserDTO'>
+select * from tbl_java_user
+</select>
+
+<!-- 전체 사용자 이름 목록 -->
+<select id='name_all' resultType='string'>
+select name from tbl_java_user
+</select>
+
+<select id="user_name" resultType='string'>
+select name from tbl_java_user where id = 'user1'
+</select>
+
+<select id="user_money" resultType='integer'>
+select money from tbl_java_user where id ='user1'
+</select>
+
+</mapper>

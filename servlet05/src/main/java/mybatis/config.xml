@@ -16,5 +16,6 @@
   </environments>
   <mappers>
     <mapper resource="sqlmap/test-mapper.xml"/>
+    <mapper resource="sqlmap/user-mapper.xml"/>
   </mappers>
 </configuration>
