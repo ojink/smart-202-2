@@ -9,5 +9,7 @@
 <body>
 <h3>홈</h3>
 <div><a href='test.do'>조회테스트</a></div>
+<div><a href='user.ju'>회원정보</a></div>
+<div><a href='userAll.ju'>전체회원이름</a></div>
 </body>
 </html>
