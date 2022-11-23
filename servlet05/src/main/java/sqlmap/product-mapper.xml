@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product">
+<!-- 전체 상품목록 -->
+<select id='product_list' resultType='dto.ProductDTO'>
+select * from tbl_java_product
+</select>
+
+</mapper>
+  

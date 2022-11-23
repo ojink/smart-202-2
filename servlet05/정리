@@ -52,9 +52,12 @@ tbl_java_product 테이블의 정보를 모두 출력하기
 
 
    
- mybatis.org > Products > docs > Java API 
+mybatis.org > Products > docs > 자바 API 
+SqlSession 실행결과행이 여러건인 경우 List<E> : E 에는 모든 레퍼런스타입 가능
  
- 
+mybatis.org > Products > docs > 매퍼설정
+typeAliases : resultType 으로 지정할 수 있는 Mapped Type 이 있다.
+
  
   
    

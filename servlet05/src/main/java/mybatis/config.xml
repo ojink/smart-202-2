@@ -17,5 +17,6 @@
   <mappers>
     <mapper resource="sqlmap/test-mapper.xml"/>
     <mapper resource="sqlmap/user-mapper.xml"/>
+    <mapper resource="sqlmap/product-mapper.xml"/>
   </mappers>
 </configuration>
