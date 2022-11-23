@@ -21,7 +21,7 @@
 		<th>상품가격</th><th>상품수량</th></tr>
 	<c:forEach items="${list}" var="dto">
 	<tr><td>${dto.num}</td>
-		<td><a href=''>${dto.name}</a></td>
+		<td><a href='product_info.pd?no=${dto.num}'>${dto.name}</a></td>
 		<td>${dto.company}</td>
 		<td class='number'><fmt:formatNumber value='${dto.price}'/> </td>
 		<td class='number'>${dto.qty}</td>

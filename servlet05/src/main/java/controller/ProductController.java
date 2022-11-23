@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import command.Command;
 import command.ProductAll;
+import command.ProductInfoCommand;
 
 @WebServlet("*.pd")
 public class ProductController extends HttpServlet {
@@ -20,11 +21,18 @@ public class ProductController extends HttpServlet {
 		String uri = request.getServletPath();
 		String view = "";
 		boolean redirect = false;
+		Command command = null;
 		if( uri.equals("/productAll.pd") ) {
-			Command command = new ProductAll();
+			command = new ProductAll();
 			command.execute(request, response);
 			
 			view = "product_list.jsp";
+		
+		}else if( uri.equals("/product_info.pd") ) {
+			command = new ProductInfoCommand();
+			command.execute(request, response);
+			
+			view = "product_info.jsp";
 		}
 	
 		if( redirect )
