@@ -8,12 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div><a href='<c:url value="/"/>'>홈</a></div>
+<hr>
 <h3>전체 사용자정보 목록</h3>
 <table border='1'>
 <tr><th>아이디</th><th>이름</th><th>이메일</th>
 	<th>관리자여부</th><th>Money</th></tr>
 <c:forEach items='${user_list}' var='dto'>
-<tr><td>${dto.id}</td>
+<tr><td><a href='info.ju?id=${dto.id}'>${dto.id}</a></td>
 	<td>${dto.name }</td>
 	<td>${dto.email }</td>
 	<td>${dto.admin }</td>

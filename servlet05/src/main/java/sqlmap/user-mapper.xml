@@ -3,6 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="user">
+<!-- 선택한 사용자정보 조회 -->
+<select id='user_info' resultType='dto.UserDTO'>
+select * from tbl_java_user where id = #{id}
+</select>
 
 <!-- 전체 사용자정보 목록 -->
 <select id='user_list' resultType='dto.UserDTO'>

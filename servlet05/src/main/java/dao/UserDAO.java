@@ -11,6 +11,12 @@ import mybatis.MybatisFactory;
 public class UserDAO {
 	private SqlSession sql;
 	
+	//선택한 사용자의 정보 조회 메소드
+	public UserDTO select_user_info(String id) {
+		connect();
+		UserDTO dto = sql.selectOne("user.user_info", id);
+		return dto;
+	}
 	
 	//전체 사용자정보를 조회 메소드
 	public List<UserDTO> select_user_list() {
