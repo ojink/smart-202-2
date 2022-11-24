@@ -15,6 +15,13 @@ public class CustomerDAO {
 		sql = factory.openSession(true);
 	}
 	
+	//선택한 고객정보 조회 메소드
+	public CustomerDTO customer_info(int id) {
+		connect();
+		CustomerDTO dto = sql.selectOne("customer.info", id);
+		return dto;
+	}
+	
 	//전체 고객목록 조회 메소드
 	public List<CustomerDTO> customer_list() {
 		connect();

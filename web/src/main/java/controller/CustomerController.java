@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import common.Command;
+import customer.command.CustomerInfo;
 import customer.command.CustomerList;
 
 @WebServlet("*.cu")
@@ -29,6 +30,15 @@ public class CustomerController extends HttpServlet {
 			
 			//응답화면연결
 			view = "customer/list.jsp";
+			
+		}else if( uri.equals("/info.cu") ) {
+			//선택한 고객정보화면 요청
+			//비지니스로직
+			command = new CustomerInfo();
+			command.exec(request, response);
+			
+			//응답화면연결
+			view = "customer/info.jsp";
 		}
 		
 		//화면연결 기본은 forward방식

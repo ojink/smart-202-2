@@ -11,28 +11,31 @@
 <body>
        <div class="d-flex" id="wrapper">
             <!-- Sidebar-->
- 			<jsp:include page="/include/sidebar.jsp"/>
+ 			<jsp:include page='/include/sidebar.jsp'/>
  			
             <!-- Page content wrapper-->
             <div id="page-content-wrapper">
                 <!-- Top navigation-->
-	 			<jsp:include page="/include/navigation.jsp"/>
+ 				<jsp:include page='/include/navigation.jsp'/>
 
                 <!-- Page content-->
                 <div class="container-fluid">
-                    <h2 class="mt-4">고객목록</h2>
-					<table class='tb-list w-px600'>
-						<tr><th>고객명</th>
-							<th>이메일</th>
-							<th>전화번호</th>
+                    <h2 class="mt-4">고객정보</h2>
+					<table class='w-px400'>
+						<tr><th class='w-px140'>고객명</th>
+							<td>${dto.name}</td>
 						</tr>
-					<c:forEach items='${list}' var='dto'>
-						<tr><td><a href='info.cu?id=${dto.id}'>${dto.name}</a></td>
-							<td>${dto.email}</td>
-							<td>${dto.phone}</td>
+						<tr><th>성별</th>
+							<td>${dto.gender}</td>
 						</tr>
-					</c:forEach>
+						<tr><th>이메일</th>
+							<td>${dto.email }</td>
+						</tr>
+						<tr><th>전화번호</th>
+							<td>${dto.phone }</td>
+						</tr>
 					</table>
+
                 </div>
             </div>
         </div>
