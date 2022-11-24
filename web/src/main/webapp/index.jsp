@@ -9,5 +9,8 @@
 </head>
 <body>
 
+<h3>홈</h3>
+<a href='list.cu'>고객관리</a>
+
 </body>
 </html>

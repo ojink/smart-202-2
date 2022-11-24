@@ -1,0 +1,53 @@
+고객관리
+create table customer(
+	id          number constraint customer_id_pk primary key,
+	name        varchar2(50) not null,
+	gender      varchar2(3) default '남' not null,
+	email       varchar2(50),
+	phone       varchar2(13)
+);
+
+customer 테이블의 pk인 id에 적용할 시퀀스
+create sequence seq_customer
+start with 1 increment by 1 nocache; 
+
+insert into customer(id, name, email)
+values(seq_customer.nextval, '홍길동', 'hong@naver.com');
+
+시퀀스가 customer 테이블에 자동적용되게 할 트리거
+create trigger trg_customer 
+	before insert on customer
+	for each row
+begin
+	select seq_customer.nextval into :new.id from dual; 
+end;
+/
+
+쿼리문선언할 매퍼파일 만들기 : xxx-mapper.xml
+namespace 지정하기: <mapper namespace="xxx"></mapper>
+
+DB연결위한 설정파일 만들기: xxx-config.xml
+1. driver, url, username, password 를 지정한다.
+2. mappers 태그에 사용할 mapper 를 등록한다.
+<mapper resource="xxx-mapper.xml"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
