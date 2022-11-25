@@ -2,6 +2,9 @@
 body {
 	text-align: center;
 }
+.category { background-color: #0b5ed7;  color:#fff !important;  font-weight: bold; }
+
+table { margin:  0 auto; }
 table th, table td { border: 1px solid #b0b0b0; }
 table tr { height: 46px; }
 table.tb-list tr { height: 38px; }
@@ -12,6 +15,7 @@ a:link, a:visited { text-decoration: none; color:inherit; }
 a:hover {  text-decoration:underline; color:#0b5ed7; }
 
 
+div.btnSet { margin: 20px auto !important; }
 
 .w-pct80 { width:80% }
 .w-pct60 { width:60% }
