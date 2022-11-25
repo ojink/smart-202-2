@@ -3,6 +3,25 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="customer">
+
+<!-- 고객정보삭제 -->
+<delete id='delete'>
+	delete from customer where id = #{id}
+</delete>
+
+<!-- 신규고객정보저장 -->
+<insert id="insert">
+	insert into customer(name, gender, email, phone)
+	values (#{name}, #{gender}, #{email}, #{phone})
+</insert>
+
+<!-- 고객정보수정저장 -->
+<update id="update">
+	update customer 
+	set name = #{name}, gender = #{gender}, email = #{email}, phone = #{phone}
+	where id = #{id}
+</update>
+
 <!-- 선택고객정보 -->
 <select id='info' resultType='customer.CustomerDTO'>
 	select * from customer where id = #{id}
