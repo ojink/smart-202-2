@@ -4,7 +4,7 @@
         
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <link href="css/styles.css" rel="stylesheet" />
-<link href="css/common.css" rel="stylesheet" />
+<link href="css/common.css?<%=new java.util.Date() %>" rel="stylesheet" />
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
