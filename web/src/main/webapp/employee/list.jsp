@@ -26,10 +26,11 @@
 			<li>부서명</li>
 			<li>
 				<!-- 선택한 부서의 사원목록을 조회하도록 -->
-				<select class='w-px200' onchange="$('form').submit()">
+				<select name='department_id' class='w-px200' onchange="$('form').submit()">
 					<option value='-1'>전체부서</option>
 					<c:forEach items='${departments}' var='d'>
-					<option value='${d.department_id}'>${d.department_name}</option>
+					<option ${department_id eq d.department_id ? 'selected' : ''} 
+						value='${d.department_id}'>${d.department_name}</option>
 					</c:forEach>
 				</select>
 			</li>

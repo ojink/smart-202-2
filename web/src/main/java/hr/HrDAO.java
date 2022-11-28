@@ -26,6 +26,14 @@ public class HrDAO {
 		return list;
 	}
 	
+	//선택한 부서의 사원조회
+	public List<EmployeeDTO> employee_list(int department_id) {
+		connect();
+		List<EmployeeDTO> list = sql.selectList("hr.list", department_id);
+		return list;
+	}
+	
+
 	//선택한 사원정보조회
 	public EmployeeDTO employee_info(int id) {
 		connect();
@@ -39,7 +47,6 @@ public class HrDAO {
 		List<DepartmentDTO> list = sql.selectList("hr.department_list");
 		return list;
 	}
-	
 	
 	//선택한 사원정보변경
 	public void employee_update(EmployeeDTO dto) {

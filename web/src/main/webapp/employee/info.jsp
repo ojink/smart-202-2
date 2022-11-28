@@ -51,6 +51,8 @@
 		</table>
 		<div class='btnSet'>
 			<button class='btn btn-primary' onclick='location="list.hr"'>사원목록</button>
+			<button class='btn btn-primary' 
+				onclick='location="modify.hr?id=${dto.employee_id}"'>정보수정</button>
 		</div>
 	</div>
 </div>

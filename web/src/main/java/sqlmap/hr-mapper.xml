@@ -30,6 +30,14 @@ select last_name||' '|| first_name name, department_name
 from employees e left outer join departments d 
 						on e.department_id=d.department_id
 	 inner join jobs j on e.job_id=j.job_id  
+<if test='department_id != -1'>
+	<choose>
+		<when test="department_id==0">where e.department_id is null</when>
+		<otherwise>where e.department_id = #{department_id}</otherwise>
+	</choose>
+<!-- 	<if test='department_id==0'>where e.department_id is null</if> -->
+<!-- 	<if test='department_id!=0'>where e.department_id = #{department_id}</if>	  -->
+</if>	 
 order by employee_id
 </select>
 </mapper>
