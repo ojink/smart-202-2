@@ -17,6 +17,9 @@ public class HrDAO {
 	//CRUD(Create, Read, Update, Delete)
 	//신규사원등록
 	public void employee_regist(EmployeeDTO dto){
+		connect();
+		sql.insert("hr.employee_insert", dto);
+		sql.close();
 	}
 	
 	//전체사원목록조회
@@ -79,7 +82,9 @@ public class HrDAO {
 	
 	//선택한 사원정보삭제
 	public void employee_delete(int employee_id) {
-		
+		connect();
+		sql.delete("hr.employee_delete", employee_id);
+		sql.close();
 	}
 	
 }

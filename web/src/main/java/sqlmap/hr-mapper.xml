@@ -10,6 +10,28 @@ select department_id, department_name from departments
 order by department_name
 </select>
 
+<!-- 사원정보삭제 -->
+<delete id='employee_delete'>
+delete from employees where employee_id = #{employee_id}
+</delete>
+
+<!-- 신규사원정보저장 -->
+<insert id='employee_insert'>
+insert into employees 
+(employee_id, last_name, first_name, email, phone_number, job_id
+, hire_date, salary, manager_id, department_id)
+values
+(employees_seq.nextval, #{last_name}, #{first_name}, #{email}
+, #{phone_number}, #{job_id}, #{hire_date}, #{salary}
+,<if test='manager_id==-1'>null</if>
+ <if test='manager_id!=-1'>#{manager_id}</if>
+,<choose>
+	<when test="department_id==-1">null</when>
+	<otherwise>#{department_id}</otherwise>
+</choose>
+)
+</insert>
+
 <!-- 사원정보변경저장 -->
 <update id='update'>
 update employees

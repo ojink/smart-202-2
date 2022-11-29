@@ -35,6 +35,9 @@
 				</select>
 			</li>
 		</ul>
+		<ul>
+			<li><input onclick='location="new.hr"' type='button' class='btn btn-primary' value='신규등록'></li>
+		</ul>
 		</div>
 		</form>
 		
