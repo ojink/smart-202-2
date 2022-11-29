@@ -4,6 +4,37 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="hr">
 
+<!-- 회사 전체 부서목록 -->
+<select id='department_list_all' resultType='hr.DepartmentDTO'>
+select department_id, department_name from departments
+order by department_name
+</select>
+
+<!-- 사원정보변경저장 -->
+<update id='update'>
+update employees
+set last_name = #{last_name}, first_name = #{first_name}
+	, email = #{email}, phone_number = #{phone_number}
+	, salary = #{salary}, job_id = #{job_id}, hire_date = #{hire_date}
+	, department_id = #{department_id}
+	, manager_id = #{manager_id}
+where employee_id = #{employee_id}	
+</update>
+
+
+<!-- 회사 전체 업무목록 -->
+<select id='job_list_all' resultType='hr.JobDTO'>
+select * from jobs order by job_title
+</select>
+
+<!-- 매니저로 지정할 전체 사원목록 -->
+<select id='manager_list_all' resultType='hr.ManagerDTO'>
+select employee_id manager_id
+		, last_name||' '||first_name manager_name 
+from employees 
+order by manager_name
+</select>
+
 <!-- 사원이 소속되어 있는 부서목록 -->
 <select id='department_list' resultType='hr.DepartmentDTO'>
 select distinct department_id
