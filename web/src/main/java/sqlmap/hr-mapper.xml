@@ -16,8 +16,12 @@ update employees
 set last_name = #{last_name}, first_name = #{first_name}
 	, email = #{email}, phone_number = #{phone_number}
 	, salary = #{salary}, job_id = #{job_id}, hire_date = #{hire_date}
-	, department_id = #{department_id}
-	, manager_id = #{manager_id}
+	<if test='department_id == -1'>, department_id = null</if>
+	<if test='department_id != -1'>, department_id = #{department_id}</if>
+	<choose>
+		<when test="manager_id == -1">, manager_id = null</when>
+		<otherwise>, manager_id = #{manager_id}</otherwise>
+	</choose>
 where employee_id = #{employee_id}	
 </update>
 
