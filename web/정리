@@ -1,3 +1,32 @@
+회원관리
+create table member(
+	userid     varchar2(50) constraint member_userid_pk primary key,
+	userpw     varchar2(300) not null,
+	name       varchar2(50) not null,
+	gender     varchar2(3) default '여' not null,
+	email      varchar2(50) not null,
+	birth      date,
+	phone      varchar2(13),
+	post       varchar2(5),
+	address    varchar2(300),
+	admin      varchar2(1) default 'N' 
+);
+
+샘플데이터 저장하기
+insert into member(userid, userpw, name, email, admin)
+values ('admin','manager','관리자','admin@hanuledu.co.kr','Y');
+insert into member(userid, userpw, name, email, admin)
+values ('admin2','manager','운영자','admin2@hanuledu.co.kr','Y');
+insert into member(userid, userpw, name, email)
+values ('hong2022','Hong2022','홍길동','hong2022@naver.com');
+commit;
+
+
+
+
+
+
+
 고객관리
 create table customer(
 	id          number constraint customer_id_pk primary key,
