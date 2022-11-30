@@ -12,11 +12,11 @@
 
 
 <div class="border-end bg-white" id="sidebar-wrapper">
-     <div class="sidebar-heading border-bottom bg-light"><a href='<c:url value="/"/>'>스마트 웹&amp;앱</a></div>
+     <div class="sidebar-heading border-bottom bg-light"><a href='<c:url value="/index"/>'>스마트 웹&amp;앱</a></div>
      <div class="list-group list-group-flush">
          <a class="${category eq 'cu' ? 'category' : ''} list-group-item list-group-item-action list-group-item-light p-3" href="list.cu">고객관리</a>
          <a class="${category eq 'hr' ? 'category' : ''} list-group-item list-group-item-action list-group-item-light p-3" href="list.hr">사원관리</a>
-         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
+         <a class="${category eq 'no' ? 'category' : ''} list-group-item list-group-item-action list-group-item-light p-3" href="list.no">공지사항</a>
          <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
          <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
          <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
