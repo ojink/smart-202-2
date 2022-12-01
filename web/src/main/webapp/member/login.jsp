@@ -10,10 +10,17 @@
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <link href="css/styles.css" rel="stylesheet" />
 <link href="css/common.css?<%=new java.util.Date() %>" rel="stylesheet" />
+<style>
+.naver { 
+	background: url("images/naverlogin.png") center; 
+	background-size:cover;  
+}
+</style>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/scripts.js"></script> 
+<script src="js/scripts.js"></script>
+
 </head>
 <body>
 <div class="d-flex" id="wrapper">
@@ -31,6 +38,8 @@
 			<li><input type='text' class='chk' id='userid' placeholder="아이디"></li>
 			<li><input type='password' class='chk' id='userpw' placeholder="비밀번호"></li>
 			<li><input onclick="console.log('button'); fn_login()" class='btn btn-primary' type='button' value='로그인'> </li>
+			<li><hr></li>
+			<li><input type='button' class='btn btn-secondary naver'></li>
 		</ul>
 		</div>
 	</div>
@@ -50,6 +59,10 @@ function emptyCheck(){
 	});
 	return ok;
 }
+//네이버로그인 버튼 클릭시
+$('.naver').click(function(){
+	location='naverlogin.mb';
+});
 
 //아이디에서 enter 키를 누를때 비번으로 커서이동
 $('#userid').keypress(function(e){

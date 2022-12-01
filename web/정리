@@ -1,3 +1,6 @@
+네이버 클라이언트 아이디: mqIOjOK1HE2OJbrNFrnA
+네이버 클라이언트 시크릿: j9CPsKwuik
+
 회원관리
 create table member(
 	userid     varchar2(50) constraint member_userid_pk primary key,

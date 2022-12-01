@@ -50,6 +50,14 @@
 		    <version>2.13.4.2</version>
 		</dependency>
 
+		<!-- json 데이터 사용을 위한 라이브러리 -->
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20220320</version>
+		</dependency>
+
+
   </dependencies>
   
 </project>
