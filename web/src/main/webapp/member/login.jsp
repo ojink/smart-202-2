@@ -14,6 +14,12 @@
 .naver { 
 	background: url("images/naverlogin.png") center; 
 	background-size:cover;  
+	border:none;
+}
+.kakao {
+	background: url("images/kakaologin.png") center; 
+	background-size:cover;  
+	border:none;
 }
 </style>
 
@@ -40,6 +46,7 @@
 			<li><input onclick="console.log('button'); fn_login()" class='btn btn-primary' type='button' value='로그인'> </li>
 			<li><hr></li>
 			<li><input type='button' class='btn btn-secondary naver'></li>
+			<li><input type='button' class='btn btn-secondary kakao'></li>
 		</ul>
 		</div>
 	</div>
@@ -62,6 +69,10 @@ function emptyCheck(){
 //네이버로그인 버튼 클릭시
 $('.naver').click(function(){
 	location='naverlogin.mb';
+});
+//카카오로그인 버튼 클릭시
+$('.kakao').click(function(){
+	location='kakaologin.mb';
 });
 
 //아이디에서 enter 키를 누를때 비번으로 커서이동

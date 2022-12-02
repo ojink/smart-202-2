@@ -7,6 +7,8 @@ ul {
 	align-items: center;
 	padding: 0;
 }
+ul li  { display:flex;  align-items: center }
+ul li.active * { margin-right: 10px }  
 #list-top {
 	margin: 0 auto;
 	display: flex; justify-content: space-between;

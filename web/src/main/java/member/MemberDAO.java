@@ -9,6 +9,27 @@ import mybatis.HanulFactory;
 
 public class MemberDAO {
 	private SqlSession sql;
+	//회원정보신규저장
+	public void member_insert(MemberDTO dto) {
+		connect();
+		sql.insert("member.insert", dto);
+		sql.close();
+	}
+	
+	//회원정보변경저장
+	public void member_update(MemberDTO dto) {
+		connect();
+		sql.update("member.update", dto);
+		sql.close();
+	}
+	
+	
+	//아이디 존재여부확인 메소드
+	public int idExist(String id) {
+		connect();
+		int count = sql.selectOne("member.userid_exist", id);
+		return count;
+	}
 	
 	//로그인 메소드
 	public MemberDTO login(String id, String pw) {

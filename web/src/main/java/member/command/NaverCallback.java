@@ -7,6 +7,7 @@ import org.json.JSONObject;
 
 import common.Command;
 import common.CommonUtility;
+import member.MemberDAO;
 import member.MemberDTO;
 
 public class NaverCallback implements Command {
@@ -81,19 +82,18 @@ public class NaverCallback implements Command {
 				}
 				dto.setPhone( json.getString("mobile"));
 				
+				//DB에 해당 id 가 존재하는지 파악
+				MemberDAO dao = new MemberDAO();
+				if( dao.idExist( dto.getUserid() )==0 ) {
+					//네이버로 로그인이 처음인 경우: insert
+					dao.member_insert(dto);
+				}else {
+					//네이버로 로그인한 적이 있는 경우: update
+					dao.member_update(dto);
+				}
+				request.getSession().setAttribute("loginInfo", dto);
 			}
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 
 }
